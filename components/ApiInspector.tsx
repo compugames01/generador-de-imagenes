@@ -4,7 +4,7 @@ import { sendRawApiRequest } from '../services/geminiService';
 
 curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent" \
   -H 'Content-Type: application/json' \
-  -H 'X-goog-api-key: AIzaSyAeG4IIuyv_vwZivoQsRq7VhCWttVdIY5E' \
+  -H 'X-goog-api-key: AIzaSyBADD7pgxBJmeBJ6QUcckqTSNgYZ7cBw9Y' \
   -X POST \
   -d '{
     "contents": [
