@@ -2,21 +2,21 @@ import React, { useState, useCallback } from 'react';
 import { Loader } from './Loader';
 import { sendRawApiRequest } from '../services/geminiService';
 
-const curlExample = `curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent" \\
--H 'Content-Type: application/json' \\
--H 'X-goog-api-key: YOUR_API_KEY' \\
--X POST \\
--d '{
-  "contents": [
-    {
-      "parts": [
-        {
-          "text": "Explain how AI works in a few words"
-        }
-      ]
-    }
-  ]
-}'`;
+curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent" \
+  -H 'Content-Type: application/json' \
+  -H 'X-goog-api-key: AIzaSyAeG4IIuyv_vwZivoQsRq7VhCWttVdIY5E' \
+  -X POST \
+  -d '{
+    "contents": [
+      {
+        "parts": [
+          {
+            "text": "Explain how AI works in a few words"
+          }
+        ]
+      }
+    ]
+  }'
 
 const JsonViewer: React.FC<{ jsonString: string }> = ({ jsonString }) => {
     const syntaxHighlight = (json: string) => {
