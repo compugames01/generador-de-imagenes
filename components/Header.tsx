@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
         Bienvenido al Analizador
       </h1>
       <p className="mt-2 text-gray-300 text-sm sm:text-base">
-        Transcodificando Píxeles a Palabras
+        esto es una beta
       </p>
     </header>
   );
