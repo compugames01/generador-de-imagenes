@@ -1,4 +1,3 @@
-
 import { GoogleGenAI, Modality, GenerateContentResponse } from "@google/genai";
 
 const fileToBase64 = (file: File): Promise<string> => {
@@ -82,7 +81,7 @@ export const analyzeImage = async (imageFile: File): Promise<string> => {
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-2.5-flash-002', // ✅ ACTUALIZADO - Versión estable más reciente
       contents: { parts: [imagePart, textPart] },
     });
 
@@ -112,7 +111,7 @@ export const editImage = async (imageFile: File, prompt: string): Promise<string
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-image-preview',
+      model: 'gemini-2.5-flash-image-preview', // ✅ CORRECTO - Este se mantiene igual
       contents: {
         parts: [imagePart, textPart],
       },
@@ -166,7 +165,7 @@ export const improvePrompt = async (prompt: string): Promise<string> => {
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-2.5-flash-002', // ✅ ACTUALIZADO - Versión estable más reciente
       contents: instruction,
     });
 
@@ -186,7 +185,7 @@ export const sendRawApiRequest = async (prompt: string): Promise<GenerateContent
 
   try {
     const response: GenerateContentResponse = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-2.5-flash-002', // ✅ ACTUALIZADO - Versión estable más reciente
       contents: prompt,
     });
 
