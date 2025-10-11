@@ -43,7 +43,7 @@ const handleApiError = (error: unknown, context: 'analysis' | 'editing' | 'promp
   // If we successfully extracted an API error payload, format it.
   if (apiErrorPayload) {
     if (apiErrorPayload.status === 'RESOURCE_EXHAUSTED' || apiErrorPayload.code === 429) {
-      friendlyErrorMessage = 'Límite de cuota de API excedido. Por favor, revisa tu plan de facturación o inténtalo más tarde.';
+      friendlyErrorMessage = 'Límite de cuota de API excedido. Por favor, revisa tu plan de facturación or inténtalo más tarde.';
     } else {
       friendlyErrorMessage = apiErrorPayload.message || 'La API devolvió un error no especificado.';
     }
@@ -81,7 +81,7 @@ export const analyzeImage = async (imageFile: File): Promise<string> => {
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-002', // ✅ ACTUALIZADO - Versión estable más reciente
+      model: 'gemini-2.5-flash-002', // ✅ CORRECTO - Modelo estable para análisis de texto
       contents: { parts: [imagePart, textPart] },
     });
 
@@ -111,7 +111,7 @@ export const editImage = async (imageFile: File, prompt: string): Promise<string
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-image-preview', // ✅ CORRECTO - Este se mantiene igual
+      model: 'gemini-2.5-flash-image', // ✅ ACTUALIZADO - Modelo estable GA (reemplaza -preview)
       contents: {
         parts: [imagePart, textPart],
       },
@@ -165,7 +165,7 @@ export const improvePrompt = async (prompt: string): Promise<string> => {
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-002', // ✅ ACTUALIZADO - Versión estable más reciente
+      model: 'gemini-2.5-flash-002', // ✅ CORRECTO - Modelo estable para mejora de texto
       contents: instruction,
     });
 
@@ -185,7 +185,7 @@ export const sendRawApiRequest = async (prompt: string): Promise<GenerateContent
 
   try {
     const response: GenerateContentResponse = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-002', // ✅ ACTUALIZADO - Versión estable más reciente
+      model: 'gemini-2.5-flash-002', // ✅ CORRECTO - Modelo estable para inspector
       contents: prompt,
     });
 
