@@ -81,7 +81,7 @@ export const analyzeImage = async (imageFile: File): Promise<string> => {
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-002', // ✅ CORRECTO - Modelo estable para análisis de texto
+      model: 'gemini-2.5-flash', // ✅ CORRECTO - Modelo estable para análisis de texto
       contents: { parts: [imagePart, textPart] },
     });
 
@@ -165,7 +165,7 @@ export const improvePrompt = async (prompt: string): Promise<string> => {
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-002', // ✅ CORRECTO - Modelo estable para mejora de texto
+      model: 'gemini-2.5-flash', // ✅ CORRECTO - Modelo estable para mejora de texto
       contents: instruction,
     });
 
@@ -185,7 +185,7 @@ export const sendRawApiRequest = async (prompt: string): Promise<GenerateContent
 
   try {
     const response: GenerateContentResponse = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-002', // ✅ CORRECTO - Modelo estable para inspector
+      model: 'gemini-2.5-flash', // ✅ CORRECTO - Modelo estable para inspector
       contents: prompt,
     });
 
