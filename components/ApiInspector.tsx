@@ -17,7 +17,6 @@ const curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-f
       }
     ]
   }'
-
 const JsonViewer: React.FC<{ jsonString: string }> = ({ jsonString }) => {
     const syntaxHighlight = (json: string) => {
       json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
