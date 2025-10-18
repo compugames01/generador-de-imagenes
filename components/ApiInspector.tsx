@@ -4,7 +4,7 @@ import { sendRawApiRequest } from '../services/geminiService';
 
 curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent" \
   -H 'Content-Type: application/json' \
-  -H 'X-goog-api-key: AIzaSyBADD7pgxBJmeBJ6QUcckqTSNgYZ7cBw9Y' \
+  -H 'X-goog-api-key: AIzaSyAMix5u-1MT7hPkf3jS2CKl-OaxTUMc_7c' \
   -X POST \
   -d '{
     "contents": [
@@ -16,7 +16,7 @@ curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:g
         ]
       }
     ]
- }'
+  }'
 
 const JsonViewer: React.FC<{ jsonString: string }> = ({ jsonString }) => {
     const syntaxHighlight = (json: string) => {
