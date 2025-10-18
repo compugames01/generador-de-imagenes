@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { Loader } from './Loader';
 import { sendRawApiRequest } from '../services/geminiService';
 
-curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent" \
+const curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent" \
   -H 'Content-Type: application/json' \
   -H 'X-goog-api-key: AIzaSyAMix5u-1MT7hPkf3jS2CKl-OaxTUMc_7c' \
   -X POST \
